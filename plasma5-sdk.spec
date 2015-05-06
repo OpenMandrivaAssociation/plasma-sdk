@@ -26,6 +26,17 @@ BuildRequires:	kf5texteditor-devel
 BuildRequires:	kf5widgetsaddons-devel
 BuildRequires:	kf5windowsystem-devel
 BuildRequires:	kf5xmlgui-devel
+BuildRequires:	pkgconfig(Qt5Core)
+BuildRequires:	pkgconfig(Qt5DBus)
+BuildRequires:	pkgconfig(Qt5Gui)
+BuildRequires:	pkgconfig(Qt5Qml)
+BuildRequires:	pkgconfig(Qt5Quick)
+BuildRequires:	pkgconfig(Qt5Svg)
+BuildRequires:	pkgconfig(Qt5Test)
+BuildRequires:	pkgconfig(Qt5WebKit)
+BuildRequires:	pkgconfig(Qt5WebKitWidgets)
+BuildRequires:	pkgconfig(Qt5Widgets)
+BuildRequires:	pkgconfig(Qt5Xml)
 Requires:	plasma5-cuttlefish
 Requires:	plasma5-engineexplorer
 Requires:	plasma5-plasmoidviewer
