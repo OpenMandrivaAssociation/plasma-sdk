@@ -23,7 +23,7 @@ BuildRequires:	cmake(KF5Service)
 BuildRequires:	cmake(KF5TextEditor)
 BuildRequires:	cmake(KF5WidgetsAddons)
 BuildRequires:	cmake(KF5Windowsystem)
-BuildRequires:	cmake(KF5MLGui)
+BuildRequires:	cmake(KF5XmlGui)
 Requires:	plasma-cuttlefish
 Requires:	plasma-engineexplorer
 Requires:	plasma-plasmoidviewer
