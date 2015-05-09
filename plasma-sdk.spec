@@ -126,7 +126,7 @@ rm -f po/*/remote-widgets-browser.po
 %ninja -C build
 
 %install
-%ninja_install-C build
+%ninja_install -C build
 
 %find_lang cuttlefish
 %find_lang plasmaengineexplorer
