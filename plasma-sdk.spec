@@ -1,35 +1,33 @@
-%define oname plasma-sdk
-
 Summary:	Plasma 5 SDK
-Name:		plasma5-sdk
+Name:		plasma-sdk
 Version:	5.3.0
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://www.kde.org/
-Source0:	ftp://ftp.kde.org/pub/kde/stable/plasma/%{version}/%{oname}-%{version}.tar.xz
-BuildRequires:	extra-cmake-modules
-BuildRequires:	kf5archive-devel
-BuildRequires:	kf5completion-devel
-BuildRequires:	kf5config-devel
-BuildRequires:	kf5configwidgets-devel
-BuildRequires:	kf5coreaddons-devel
-BuildRequires:	kf5declarative-devel
-BuildRequires:	kf5i18n-devel
-BuildRequires:	kf5iconthemes-devel
-BuildRequires:	kf5kio-devel
-BuildRequires:	kf5newstuff-devel
-BuildRequires:	kf5parts-devel
-BuildRequires:	kf5plasma-devel
-BuildRequires:	kf5service-devel
-BuildRequires:	kf5texteditor-devel
-BuildRequires:	kf5widgetsaddons-devel
-BuildRequires:	kf5windowsystem-devel
-BuildRequires:	kf5xmlgui-devel
-Requires:	plasma5-cuttlefish
-Requires:	plasma5-engineexplorer
-Requires:	plasma5-plasmoidviewer
-Requires:	plasma5-themeexplorer
+Source0:	http://download.kde.org/stable/plasma/%{version}/%{name}-%{version}.tar.xz
+BuildRequires:	cmake(ECM)
+BuildRequires:	cmake(KF5Archive)
+BuildRequires:	cmake(KF5Completion)
+BuildRequires:	cmake(KF5Config)
+BuildRequires:	cmake(KF5ConfigWidgets)
+BuildRequires:	cmake(KF5CoreAddons)
+BuildRequires:	cmake(KF5Declarative)
+BuildRequires:	cmake(KF5I18n)
+BuildRequires:	cmake(KF5Iconthemes)
+BuildRequires:	cmake(KF5KIO)
+BuildRequires:	cmake(KF5Newstuff)
+BuildRequires:	cmake(KF5Parts)
+BuildRequires:	cmake(KF5Plasma)
+BuildRequires:	cmake(KF5Service)
+BuildRequires:	cmake(KF5Texteditor)
+BuildRequires:	cmake(KF5WidgetsAddons)
+BuildRequires:	cmake(KF5Windowsystem)
+BuildRequires:	cmake(KF5MLGui)
+Requires:	plasma-cuttlefish
+Requires:	plasma-engineexplorer
+Requires:	plasma-plasmoidviewer
+Requires:	plasma-themeexplorer
 
 %description
 Plasma 5 SDK.
@@ -38,14 +36,14 @@ Plasma 5 SDK.
 
 #----------------------------------------------------------------------------
 
-%package -n plasma5-cuttlefish
+%package -n plasma-cuttlefish
 Summary:	Plasma 5 icon browser
 Group:		Graphical desktop/KDE
 
-%description -n plasma5-cuttlefish
+%description -n plasma-cuttlefish
 Plasma 5 icon browser.
 
-%files -n plasma5-cuttlefish -f cuttlefish.lang
+%files -n plasma-cuttlefish -f cuttlefish.lang
 %{_kde5_bindir}/cuttlefish
 %dir %{_kde5_datadir}/plasma/packages/org.kde.plasma.cuttlefish/
 %{_kde5_datadir}/plasma/packages/org.kde.plasma.cuttlefish/*
@@ -54,57 +52,57 @@ Plasma 5 icon browser.
 
 #----------------------------------------------------------------------------
 
-%package -n plasma5-engineexplorer
+%package -n plasma-engineexplorer
 Summary:	Plasma 5 engine explorer
 Group:		Graphical desktop/KDE
 Conflicts:	plasmate
 
-%description -n plasma5-engineexplorer
+%description -n plasma-engineexplorer
 Plasma 5 engine explorer. It's used to explore plasma data engines.
 
-%files -n plasma5-engineexplorer -f plasmaengineexplorer.lang
+%files -n plasma-engineexplorer -f plasmaengineexplorer.lang
 %{_kde5_bindir}/plasmaengineexplorer
 
 #----------------------------------------------------------------------------
 
-%package -n plasma5-plasmoidviewer
+%package -n plasma-plasmoidviewer
 Summary:	Plasma 5 plasmoid viewer
 Group:		Graphical desktop/KDE
-Requires:	plasma5-shell-plasmoidviewer
+Requires:	plasma-shell-plasmoidviewer
 Conflicts:	plasmate
 
-%description -n plasma5-plasmoidviewer
+%description -n plasma-plasmoidviewer
 Plasma 5 plasmoid viewer. It's used to run plasmoids in their own window.
 
-%files -n plasma5-plasmoidviewer -f plasmoidviewer.lang
+%files -n plasma-plasmoidviewer -f plasmoidviewer.lang
 %{_kde5_bindir}/plasmoidviewer
 
 #----------------------------------------------------------------------------
 
-%package -n plasma5-shell-plasmoidviewer
+%package -n plasma-shell-plasmoidviewer
 Summary:	Plasma 5 plasmoid viewer shell
 Group:		Graphical desktop/KDE
 # Not sure if it's required
-Suggests:	plasma5-plasmoidviewer
+Suggests:	plasma-plasmoidviewer
 
-%description -n plasma5-shell-plasmoidviewer
+%description -n plasma-shell-plasmoidviewer
 Plasma 5 plasmoid viewer shell.
 
-%files -n plasma5-shell-plasmoidviewer
+%files -n plasma-shell-plasmoidviewer
 %dir %{_kde5_datadir}/plasma/shells/org.kde.plasma.plasmoidviewershell/
 %{_kde5_datadir}/plasma/shells/org.kde.plasma.plasmoidviewershell/*
 %{_kde5_services}/plasma-shell-org.kde.plasma.plasmoidviewershell.desktop
 
 #----------------------------------------------------------------------------
 
-%package -n plasma5-themeexplorer
+%package -n plasma-themeexplorer
 Summary:	Plasma 5 theme explorer
 Group:		Graphical desktop/KDE
 
-%description -n plasma5-themeexplorer
+%description -n plasma-themeexplorer
 Plasma 5 theme explorer. It's used to explore and edit plasma themes.
 
-%files -n plasma5-themeexplorer -f themeexplorer.lang
+%files -n plasma-themeexplorer -f themeexplorer.lang
 %{_kde5_bindir}/plasmathemeexplorer
 %dir %{_kde5_datadir}/kpackage/genericqml/org.kde.plasma.themeexplorer/
 %{_kde5_datadir}/kpackage/genericqml/org.kde.plasma.themeexplorer/*
@@ -112,7 +110,7 @@ Plasma 5 theme explorer. It's used to explore and edit plasma themes.
 #----------------------------------------------------------------------------
 
 %prep
-%setup -qn %{oname}-%{version}
+%setup -q
 # Must not be plasma_shell_org.kde.desktop, should be checked if fixed
 rm -f po/*/plasma_shell_org.kde.desktop.po
 # Don't ship translations if we don't ship package itself
@@ -121,12 +119,13 @@ rm -f po/*/plasmate.po
 rm -f po/*/plasmawallpaperviewer.po
 rm -f po/*/remote-widgets-browser.po
 
-%build
 %cmake_kde5
-%make
+
+%build
+%ninja -C build
 
 %install
-%makeinstall_std -C build
+%ninja_install-C build
 
 %find_lang cuttlefish
 %find_lang plasmaengineexplorer
