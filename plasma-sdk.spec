@@ -46,6 +46,7 @@ Plasma 5 icon browser.
 
 %files -n plasma-cuttlefish -f cuttlefish.lang
 %{_kde5_bindir}/cuttlefish
+%{_datadir}/applications/cuttlefish.desktop
 %dir %{_kde5_datadir}/plasma/packages/org.kde.plasma.cuttlefish/
 %{_kde5_datadir}/plasma/packages/org.kde.plasma.cuttlefish/*
 %{_kde5_services}/plasma-package-org.kde.plasma.cuttlefish.desktop
@@ -89,7 +90,7 @@ Suggests:	plasma-plasmoidviewer
 %description -n plasma-shell-plasmoidviewer
 Plasma 5 plasmoid viewer shell.
 
-%files -n plasma-shell-plasmoidviewer
+%files -n plasma-shell-plasmoidviewer -f plasma_shell_org.kde.plasmoidviewershell.lang
 %dir %{_kde5_datadir}/plasma/shells/org.kde.plasma.plasmoidviewershell/
 %{_kde5_datadir}/plasma/shells/org.kde.plasma.plasmoidviewershell/*
 %{_kde5_services}/plasma-shell-org.kde.plasma.plasmoidviewershell.desktop
@@ -105,6 +106,7 @@ Plasma 5 theme explorer. It's used to explore and edit plasma themes.
 
 %files -n plasma-themeexplorer -f themeexplorer.lang
 %{_kde5_bindir}/plasmathemeexplorer
+%{_datadir}/applications/org.kde.plasma.themeexplorer.desktop
 %dir %{_kde5_datadir}/kpackage/genericqml/org.kde.plasma.themeexplorer/
 %{_kde5_datadir}/kpackage/genericqml/org.kde.plasma.themeexplorer/*
 
@@ -132,3 +134,4 @@ rm -f po/*/remote-widgets-browser.po
 %find_lang plasmaengineexplorer
 %find_lang plasmoidviewer
 %find_lang themeexplorer
+%find_lang plasma_shell_org.kde.plasmoidviewershell
