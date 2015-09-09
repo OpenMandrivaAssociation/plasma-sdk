@@ -25,6 +25,7 @@ BuildRequires:	cmake(KF5TextEditor)
 BuildRequires:	cmake(KF5WidgetsAddons)
 BuildRequires:	cmake(KF5WindowSystem)
 BuildRequires:	cmake(KF5XmlGui)
+BuildRequires:	pkgconfig(Qt5WebKit)
 Requires:	plasma-cuttlefish
 Requires:	plasma-engineexplorer
 Requires:	plasma-plasmoidviewer
