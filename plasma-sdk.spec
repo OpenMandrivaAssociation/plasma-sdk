@@ -27,6 +27,7 @@ BuildRequires:	cmake(KF5WindowSystem)
 BuildRequires:	cmake(KF5XmlGui)
 BuildRequires:	pkgconfig(Qt5WebKit)
 BuildRequires:	pkgconfig(Qt5WebKitWidgets)
+BuildRequires:	pkgconfig(Qt5Test)
 Requires:	plasma-cuttlefish
 Requires:	plasma-engineexplorer
 Requires:	plasma-plasmoidviewer
