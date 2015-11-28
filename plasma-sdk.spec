@@ -47,7 +47,7 @@ Group:		Graphical desktop/KDE
 %description -n plasma-cuttlefish
 Plasma 5 icon browser.
 
-%files -n plasma-cuttlefish -f cuttlefish.lang
+%files -n plasma-cuttlefish -f cuttlefish.lang -f cuttlefish_editorplugin.lang
 %{_kde5_bindir}/cuttlefish
 %{_datadir}/applications/cuttlefish.desktop
 %dir %{_kde5_datadir}/plasma/packages/org.kde.plasma.cuttlefish/
@@ -134,6 +134,7 @@ rm -f po/*/remote-widgets-browser.po
 %ninja_install -C build
 
 %find_lang cuttlefish
+%find_lang cuttlefish_editorplugin
 %find_lang plasmaengineexplorer
 %find_lang plasmoidviewer
 %find_lang themeexplorer
