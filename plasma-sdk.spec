@@ -1,6 +1,6 @@
 Summary:	Plasma 5 SDK
 Name:		plasma-sdk
-Version:	5.6.5
+Version:	5.7.0
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -50,11 +50,12 @@ Plasma 5 icon browser.
 
 %files -n plasma-cuttlefish -f cuttlefish.lang,cuttlefish_editorplugin.lang
 %{_kde5_bindir}/cuttlefish
-%{_datadir}/applications/cuttlefish.desktop
+%{_datadir}/applications/org.kde.cuttlefish.desktop
 %dir %{_kde5_datadir}/plasma/packages/org.kde.plasma.cuttlefish/
 %{_kde5_datadir}/plasma/packages/org.kde.plasma.cuttlefish/*
 %{_kde5_services}/plasma-package-org.kde.plasma.cuttlefish.desktop
 %{_qt5_plugindir}/ktexteditor/cuttlefishplugin.so
+%{_datadir}/appdata/org.kde.cuttlefish.appdata.xml
 
 #----------------------------------------------------------------------------
 
@@ -134,9 +135,9 @@ rm -f po/*/remote-widgets-browser.po
 %install
 %ninja_install -C build
 
-%find_lang cuttlefish
-%find_lang cuttlefish_editorplugin
-%find_lang plasmaengineexplorer
-%find_lang plasmoidviewer
-%find_lang themeexplorer
-%find_lang plasma_shell_org.kde.plasmoidviewershell
+%find_lang cuttlefish || touch cuttlefish.lang
+%find_lang cuttlefish_editorplugin || touch cuttlefish_editorplugin.lang
+%find_lang plasmaengineexplorer || touch plasmaengineexplorer.lang
+%find_lang plasmoidviewer || touch plasmoidviewer.lang
+%find_lang themeexplorer || touch themeexplorer.lang
+%find_lang plasma_shell_org.kde.plasmoidviewershell || touch plasma_shell_org.kde.plasmoidviewershell.lang
