@@ -109,7 +109,7 @@ Group:		Graphical desktop/KDE
 %description -n plasma-themeexplorer
 Plasma 5 theme explorer. It's used to explore and edit plasma themes.
 
-%files -n plasma-themeexplorer -f themeexplorer.lang
+%files -n plasma-themeexplorer -f org.kde.plasma.themeexplorer.lang
 %{_kde5_bindir}/plasmathemeexplorer
 %{_datadir}/applications/org.kde.plasma.themeexplorer.desktop
 %dir %{_kde5_datadir}/kpackage/genericqml/org.kde.plasma.themeexplorer/
@@ -139,5 +139,5 @@ rm -f po/*/remote-widgets-browser.po
 %find_lang cuttlefish_editorplugin || touch cuttlefish_editorplugin.lang
 %find_lang plasmaengineexplorer || touch plasmaengineexplorer.lang
 %find_lang plasmoidviewer || touch plasmoidviewer.lang
-%find_lang themeexplorer || touch themeexplorer.lang
 %find_lang plasma_shell_org.kde.plasmoidviewershell || touch plasma_shell_org.kde.plasmoidviewershell.lang
+%find_lang org.kde.plasma.themeexplorer || touch org.kde.plasma.themeexplorer.lang
