@@ -26,6 +26,7 @@ BuildRequires:	cmake(KF5TextEditor)
 BuildRequires:	cmake(KF5WidgetsAddons)
 BuildRequires:	cmake(KF5WindowSystem)
 BuildRequires:	cmake(KF5XmlGui)
+BuildRequires:	cmake(KF5Kirigami)
 BuildRequires:	pkgconfig(Qt5WebKit)
 BuildRequires:	pkgconfig(Qt5WebKitWidgets)
 BuildRequires:	pkgconfig(Qt5Test)
@@ -33,6 +34,7 @@ Requires:	plasma-cuttlefish
 Requires:	plasma-engineexplorer
 Requires:	plasma-plasmoidviewer
 Requires:	plasma-themeexplorer
+Requires:	plasma-lookandfeelexplorer
 
 %description
 Plasma 5 SDK.
@@ -55,7 +57,8 @@ Plasma 5 icon browser.
 %{_kde5_datadir}/plasma/packages/org.kde.plasma.cuttlefish/*
 %{_kde5_services}/plasma-package-org.kde.plasma.cuttlefish.desktop
 %{_qt5_plugindir}/ktexteditor/cuttlefishplugin.so
-%{_datadir}/appdata/org.kde.cuttlefish.appdata.xml
+%{_datadir}/metainfo/org.kde.cuttlefish.appdata.xml
+%{_datadir}/metainfo/org.kde.plasma.cuttlefish.appdata.xml
 
 #----------------------------------------------------------------------------
 
@@ -114,6 +117,23 @@ Plasma 5 theme explorer. It's used to explore and edit plasma themes.
 %{_datadir}/applications/org.kde.plasma.themeexplorer.desktop
 %dir %{_kde5_datadir}/kpackage/genericqml/org.kde.plasma.themeexplorer/
 %{_kde5_datadir}/kpackage/genericqml/org.kde.plasma.themeexplorer/*
+%{_datadir}/metainfo/org.kde.plasma.themeexplorer.appdata.xml
+
+#----------------------------------------------------------------------------
+
+%package -n plasma-lookandfeelexplorer
+Summary:	Plasma 5 lookandfeel explorer
+Group:		Graphical desktop/KDE
+
+%description -n plasma-lookandfeelexplorer
+Plasma 5 lookandfeel explorer. It's used to explore and edit plasma themes.
+
+%files -n plasma-lookandfeelexplorer -f org.kde.plasma.lookandfeelexplorer.lang
+%{_kde5_bindir}/lookandfeelexplorer
+%{_datadir}/applications/org.kde.plasma.lookandfeelexplorer.desktop
+%dir %{_kde5_datadir}/kpackage/genericqml/org.kde.plasma.lookandfeelexplorer/
+%{_kde5_datadir}/kpackage/genericqml/org.kde.plasma.lookandfeelexplorer/*
+%{_datadir}/metainfo/org.kde.plasma.lookandfeelexplorer.appdata.xml
 
 #----------------------------------------------------------------------------
 
@@ -141,3 +161,4 @@ rm -f po/*/remote-widgets-browser.po
 %find_lang plasmoidviewer || touch plasmoidviewer.lang
 %find_lang plasma_shell_org.kde.plasmoidviewershell || touch plasma_shell_org.kde.plasmoidviewershell.lang
 %find_lang org.kde.plasma.themeexplorer || touch org.kde.plasma.themeexplorer.lang
+%find_lang org.kde.plasma.lookandfeelexplorer || touch org.kde.plasma.lookandfeelexplorer.lang
