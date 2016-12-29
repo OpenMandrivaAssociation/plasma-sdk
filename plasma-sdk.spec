@@ -52,7 +52,6 @@ Plasma 5 icon browser.
 
 %files -n plasma-cuttlefish -f cuttlefish.lang,cuttlefish_editorplugin.lang
 %{_kde5_bindir}/cuttlefish
-%{_datadir}/metainfo/*.xml
 %{_datadir}/applications/org.kde.cuttlefish.desktop
 %dir %{_kde5_datadir}/plasma/packages/org.kde.plasma.cuttlefish/
 %{_kde5_datadir}/plasma/packages/org.kde.plasma.cuttlefish/*
@@ -103,7 +102,7 @@ Plasma 5 plasmoid viewer shell.
 %dir %{_kde5_datadir}/plasma/shells/org.kde.plasma.plasmoidviewershell/
 %{_kde5_datadir}/plasma/shells/org.kde.plasma.plasmoidviewershell/*
 %{_kde5_services}/plasma-shell-org.kde.plasma.plasmoidviewershell.desktop
-
+%{_datadir}/metainfo/org.kde.plasma.plasmoidviewershell.appdata.xml
 #----------------------------------------------------------------------------
 
 %package -n plasma-themeexplorer
