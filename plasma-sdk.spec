@@ -52,6 +52,7 @@ Plasma 5 icon browser.
 
 %files -n plasma-cuttlefish -f cuttlefish.lang,cuttlefish_editorplugin.lang
 %{_kde5_bindir}/cuttlefish
+%{_datadir}/metainfo/*.xml
 %{_datadir}/applications/org.kde.cuttlefish.desktop
 %dir %{_kde5_datadir}/plasma/packages/org.kde.plasma.cuttlefish/
 %{_kde5_datadir}/plasma/packages/org.kde.plasma.cuttlefish/*
