@@ -1,6 +1,6 @@
 Summary:	Plasma 5 SDK
 Name:		plasma-sdk
-Version:	5.8.5
+Version:	5.9.0
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
