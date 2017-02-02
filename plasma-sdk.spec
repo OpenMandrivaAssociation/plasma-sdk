@@ -31,6 +31,7 @@ BuildRequires:	cmake(KF5DocTools)
 BuildRequires:	pkgconfig(Qt5WebKit)
 BuildRequires:	pkgconfig(Qt5WebKitWidgets)
 BuildRequires:	pkgconfig(Qt5Test)
+BuildRequires:	plasma-desktop
 Requires:	plasma-cuttlefish
 Requires:	plasma-engineexplorer
 Requires:	plasma-plasmoidviewer
@@ -73,6 +74,7 @@ Plasma 5 engine explorer. It's used to explore plasma data engines.
 
 %files -n plasma-engineexplorer -f plasmaengineexplorer.lang
 %{_kde5_bindir}/plasmaengineexplorer
+%{_mandir}/man1/plasmaengineexplorer.1.*
 
 #----------------------------------------------------------------------------
 
@@ -87,6 +89,7 @@ Plasma 5 plasmoid viewer. It's used to run plasmoids in their own window.
 
 %files -n plasma-plasmoidviewer -f plasmoidviewer.lang
 %{_kde5_bindir}/plasmoidviewer
+%{_mandir}/man1/plasmoidviewer.1.*
 
 #----------------------------------------------------------------------------
 
