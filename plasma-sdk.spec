@@ -1,6 +1,6 @@
 Summary:	Plasma 5 SDK
 Name:		plasma-sdk
-Version:	5.9.0
+Version:	5.9.1
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -121,7 +121,6 @@ Plasma 5 theme explorer. It's used to explore and edit plasma themes.
 %{_datadir}/applications/org.kde.plasma.themeexplorer.desktop
 %dir %{_kde5_datadir}/kpackage/genericqml/org.kde.plasma.themeexplorer/
 %{_kde5_datadir}/kpackage/genericqml/org.kde.plasma.themeexplorer/*
-%{_datadir}/metainfo/org.kde.plasma.themeexplorer.appdata.xml
 
 #----------------------------------------------------------------------------
 
@@ -137,7 +136,6 @@ Plasma 5 lookandfeel explorer. It's used to explore and edit plasma themes.
 %{_datadir}/applications/org.kde.plasma.lookandfeelexplorer.desktop
 %dir %{_kde5_datadir}/kpackage/genericqml/org.kde.plasma.lookandfeelexplorer/
 %{_kde5_datadir}/kpackage/genericqml/org.kde.plasma.lookandfeelexplorer/*
-%{_datadir}/metainfo/org.kde.plasma.lookandfeelexplorer.appdata.xml
 
 #----------------------------------------------------------------------------
 
