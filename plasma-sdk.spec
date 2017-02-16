@@ -119,6 +119,7 @@ Plasma 5 theme explorer. It's used to explore and edit plasma themes.
 %files -n plasma-themeexplorer -f org.kde.plasma.themeexplorer.lang
 %{_kde5_bindir}/plasmathemeexplorer
 %{_datadir}/applications/org.kde.plasma.themeexplorer.desktop
+%optional %{_datadir}/metainfo/org.kde.plasma.themeexplorer.appdata.xml
 %dir %{_kde5_datadir}/kpackage/genericqml/org.kde.plasma.themeexplorer/
 %{_kde5_datadir}/kpackage/genericqml/org.kde.plasma.themeexplorer/*
 
@@ -134,6 +135,7 @@ Plasma 5 lookandfeel explorer. It's used to explore and edit plasma themes.
 %files -n plasma-lookandfeelexplorer -f org.kde.plasma.lookandfeelexplorer.lang
 %{_kde5_bindir}/lookandfeelexplorer
 %{_datadir}/applications/org.kde.plasma.lookandfeelexplorer.desktop
+%optional %{_datadir}/metainfo/org.kde.plasma.lookandfeelexplorer.appdata.xml
 %dir %{_kde5_datadir}/kpackage/genericqml/org.kde.plasma.lookandfeelexplorer/
 %{_kde5_datadir}/kpackage/genericqml/org.kde.plasma.lookandfeelexplorer/*
 
