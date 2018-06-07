@@ -1,6 +1,6 @@
 Summary:	Plasma 5 SDK
 Name:		plasma-sdk
-Version:	5.12.3
+Version:	5.12.90
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -53,7 +53,7 @@ Group:		Graphical desktop/KDE
 %description -n plasma-cuttlefish
 Plasma 5 icon browser.
 
-%files -n plasma-cuttlefish -f cuttlefish.lang,cuttlefish_editorplugin.lang
+%files -n plasma-cuttlefish -f cuttlefish.lang -f cuttlefish_editorplugin.lang
 %{_kde5_bindir}/cuttlefish
 %{_datadir}/applications/org.kde.cuttlefish.desktop
 %dir %{_kde5_datadir}/plasma/packages/org.kde.plasma.cuttlefish/
@@ -76,6 +76,8 @@ Plasma 5 engine explorer. It's used to explore plasma data engines.
 %files -n plasma-engineexplorer -f plasmaengineexplorer.lang
 %{_kde5_bindir}/plasmaengineexplorer
 %{_mandir}/man1/plasmaengineexplorer.1.*
+%{_datadir}/applications/org.kde.plasmaengineexplorer.desktop
+%{_datadir}/metainfo/org.kde.plasmaengineexplorer.appdata.xml
 
 #----------------------------------------------------------------------------
 
@@ -91,6 +93,8 @@ Plasma 5 plasmoid viewer. It's used to run plasmoids in their own window.
 %files -n plasma-plasmoidviewer -f plasmoidviewer.lang
 %{_kde5_bindir}/plasmoidviewer
 %{_mandir}/man1/plasmoidviewer.1.*
+%{_datadir}/applications/org.kde.plasmoidviewer.desktop
+%{_datadir}/metainfo/org.kde.plasmoidviewer.appdata.xml
 
 #----------------------------------------------------------------------------
 
