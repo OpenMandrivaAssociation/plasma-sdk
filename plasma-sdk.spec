@@ -32,6 +32,7 @@ BuildRequires:	cmake(KF5Kirigami2)
 BuildRequires:	pkgconfig(Qt5WebKit)
 BuildRequires:	pkgconfig(Qt5WebKitWidgets)
 BuildRequires:	pkgconfig(Qt5Test)
+BuildRequires:	pkgconfig(Qt5Svg)
 BuildRequires:	plasma-desktop
 Requires:	plasma-cuttlefish
 Requires:	plasma-engineexplorer
