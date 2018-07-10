@@ -1,6 +1,6 @@
 Summary:	Plasma 5 SDK
 Name:		plasma-sdk
-Version:	5.12.3
+Version:	5.12.6
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -26,7 +26,6 @@ BuildRequires:	cmake(KF5TextEditor)
 BuildRequires:	cmake(KF5WidgetsAddons)
 BuildRequires:	cmake(KF5WindowSystem)
 BuildRequires:	cmake(KF5XmlGui)
-BuildRequires:	cmake(KF5Kirigami)
 BuildRequires:	cmake(KF5DocTools)
 BuildRequires:	cmake(KF5Kirigami2)
 BuildRequires:	pkgconfig(Qt5WebKit)
