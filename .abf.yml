@@ -1,4 +1,5 @@
 removed_sources:
   plasma-sdk-5.12.3.tar.xz: 1fb3204dfd6cc96660a1cd90a2d4c43690ae2cd2
-sources:
   plasma-sdk-5.12.6.tar.xz: 2d779711a32b2d09d4b3b0b2cc595f19edc184ae
+sources:
+  plasma-sdk-5.12.7.tar.xz: 651da5430edda06f812b16961b0cfd8e239a0171
