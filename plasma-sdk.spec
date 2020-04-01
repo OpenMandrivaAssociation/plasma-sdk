@@ -2,12 +2,12 @@
 
 Summary:	Plasma 5 SDK
 Name:		plasma-sdk
-Version:	5.18.3
-Release:	2
+Version:	5.18.4.1
+Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://www.kde.org/
-Source0:	http://download.kde.org/%{stable}/plasma/%{version}/%{name}-%{version}.tar.xz
+Source0:	http://download.kde.org/%{stable}/plasma/%(echo %{version} |cut -d. -f1-3)/%{name}-%{version}.tar.xz
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KF5Archive)
 BuildRequires:	cmake(KF5Completion)
@@ -151,7 +151,7 @@ Plasma 5 lookandfeel explorer. It's used to explore and edit plasma themes.
 #----------------------------------------------------------------------------
 
 %prep
-%setup -q
+%autosetup -p1
 # Must not be plasma_shell_org.kde.desktop, should be checked if fixed
 rm -f po/*/plasma_shell_org.kde.desktop.po
 # Don't ship translations if we don't ship package itself
