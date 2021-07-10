@@ -1,4 +1,4 @@
-%define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
+%define stable %([ "$(echo %{version} |cut -d. -f3)" -ge 80 ] && echo -n un; echo -n stable)
 
 Summary:	Plasma 5 SDK
 Name:		plasma-sdk
@@ -62,7 +62,6 @@ Plasma 5 icon browser.
 %{_datadir}/applications/org.kde.cuttlefish.desktop
 %dir %{_kde5_datadir}/plasma/packages/org.kde.plasma.cuttlefish/
 %{_kde5_datadir}/plasma/packages/org.kde.plasma.cuttlefish/*
-%{_kde5_services}/plasma-package-org.kde.plasma.cuttlefish.desktop
 %{_qt5_plugindir}/ktexteditor/cuttlefishplugin.so
 %{_datadir}/metainfo/org.kde.cuttlefish.appdata.xml
 %{_datadir}/metainfo/org.kde.plasma.cuttlefish.appdata.xml
