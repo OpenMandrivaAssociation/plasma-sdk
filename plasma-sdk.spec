@@ -2,8 +2,8 @@
 
 Summary:	Plasma 5 SDK
 Name:		plasma-sdk
-Version:	5.25.5
-Release:	2
+Version:	5.25.90
+Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://www.kde.org/
@@ -59,13 +59,9 @@ Plasma 5 icon browser.
 
 %files -n plasma-cuttlefish -f cuttlefish.lang -f cuttlefish_editorplugin.lang
 %{_kde5_bindir}/cuttlefish
-%{_datadir}/applications/org.kde.cuttlefish.desktop
-%dir %{_kde5_datadir}/plasma/packages/org.kde.plasma.cuttlefish/
-%{_kde5_datadir}/plasma/packages/org.kde.plasma.cuttlefish/*
 %{_qt5_plugindir}/ktexteditor/cuttlefishplugin.so
-%{_datadir}/metainfo/org.kde.cuttlefish.appdata.xml
+%{_datadir}/applications/org.kde.plasma.cuttlefish.desktop
 %{_datadir}/metainfo/org.kde.plasma.cuttlefish.appdata.xml
-%{_datadir}/kservices5/plasma-package-org.kde.plasma.cuttlefish.desktop
 
 #----------------------------------------------------------------------------
 
