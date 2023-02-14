@@ -2,7 +2,7 @@
 
 Summary:	Plasma 5 SDK
 Name:		plasma-sdk
-Version:	5.26.5
+Version:	5.27.0
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -96,6 +96,7 @@ Plasma 5 plasmoid viewer. It's used to run plasmoids in their own window.
 %{_datadir}/applications/org.kde.plasmoidviewer.desktop
 %{_datadir}/metainfo/org.kde.plasmoidviewer.appdata.xml
 %{_datadir}/kservices5/plasma-shell-org.kde.plasma.plasmoidviewershell.desktop
+%{_datadir}/zsh/site-functions/_plasmoidviewer
 
 #----------------------------------------------------------------------------
 
@@ -166,8 +167,8 @@ rm -f po/*/remote-widgets-browser.po
 
 %find_lang cuttlefish || touch cuttlefish.lang
 %find_lang cuttlefish_editorplugin || touch cuttlefish_editorplugin.lang
-%find_lang plasmaengineexplorer || touch plasmaengineexplorer.lang
-%find_lang plasmoidviewer || touch plasmoidviewer.lang
+%find_lang plasmaengineexplorer --with-man || touch plasmaengineexplorer.lang
+%find_lang plasmoidviewer --with-man || touch plasmoidviewer.lang
 %find_lang plasma_shell_org.kde.plasmoidviewershell || touch plasma_shell_org.kde.plasmoidviewershell.lang
 %find_lang org.kde.plasma.themeexplorer || touch org.kde.plasma.themeexplorer.lang
 %find_lang org.kde.plasma.lookandfeelexplorer || touch org.kde.plasma.lookandfeelexplorer.lang
