@@ -37,8 +37,10 @@ BuildRequires:	cmake(KF6XmlGui)
 BuildRequires:	cmake(KF6DocTools)
 BuildRequires:	cmake(KF6Kirigami2)
 BuildRequires:	qml(org.kde.kirigami)
-BuildRequires:	pkgconfig(Qt6Test)
-BuildRequires:	pkgconfig(Qt6Svg)
+BuildRequires:	cmake(Qt6)
+BuildRequires:	cmake(Qt6Core)
+BuildRequires:	cmake(Qt6Test)
+BuildRequires:	cmake(Qt6Svg)
 BuildRequires:	plasma6-desktop
 Requires:	plasma6-cuttlefish
 Requires:	plasma6-engineexplorer
