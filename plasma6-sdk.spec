@@ -1,5 +1,5 @@
 %define stable %([ "$(echo %{version} |cut -d. -f3)" -ge 80 ] && echo -n un; echo -n stable)
-%define git 20230610
+%define git 20230707
 
 Summary:	Plasma 6 SDK
 Name:		plasma6-sdk
@@ -148,6 +148,20 @@ Plasma 6 lookandfeel explorer. It's used to explore and edit plasma themes.
 %{_datadir}/applications/org.kde.plasma.lookandfeelexplorer.desktop
 %dir %{_datadir}/kpackage/genericqml/org.kde.plasma.lookandfeelexplorer/
 %{_datadir}/kpackage/genericqml/org.kde.plasma.lookandfeelexplorer/*
+
+#----------------------------------------------------------------------------
+
+%package -n plasma6-kqml
+Summary:	Plasma 6 QML viewer
+Group:		Graphical desktop/KDE
+
+%description -n plasma6-kqml
+Plasma 6 QML viewer
+
+%files -n plasma6-kqml
+%{_bindir}/kqml
+%{_mandir}/man1/kqml.1*
+%{_datadir}/zsh/site-functions/_kqml
 
 #----------------------------------------------------------------------------
 
