@@ -44,6 +44,7 @@ BuildRequires:	cmake(Qt6Core5Compat)
 BuildRequires:	cmake(Qt6Test)
 BuildRequires:	cmake(Qt6Svg)
 BuildRequires:	plasma6-desktop
+BuildRequires:	plasma6-xdg-desktop-portal-kde
 Requires:	plasma6-cuttlefish
 Requires:	plasma6-engineexplorer
 Requires:	plasma6-plasmoidviewer
