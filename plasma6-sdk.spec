@@ -1,5 +1,5 @@
 %define stable %([ "$(echo %{version} |cut -d. -f3)" -ge 80 ] && echo -n un; echo -n stable)
-%define git 20230825
+%define git 20230902
 
 Summary:	Plasma 6 SDK
 Name:		plasma6-sdk
@@ -135,6 +135,7 @@ Plasma 6 theme explorer. It's used to explore and edit plasma themes.
 %{_datadir}/applications/org.kde.plasma.themeexplorer.desktop
 %dir %{_datadir}/kpackage/genericqml/org.kde.plasma.themeexplorer/
 %{_datadir}/kpackage/genericqml/org.kde.plasma.themeexplorer/*
+%{_datadir}/metainfo/org.kde.plasma.themeexplorer.appdata.xml
 
 #----------------------------------------------------------------------------
 
