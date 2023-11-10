@@ -66,7 +66,7 @@ Group:		Graphical desktop/KDE
 %description -n plasma6-cuttlefish
 Plasma 6 icon browser.
 
-%files -n plasma6-cuttlefish -f cuttlefish.lang -f cuttlefish_editorplugin.lang
+%files -n plasma6-cuttlefish -f cuttlefish_editorplugin.lang
 %{_bindir}/cuttlefish
 %{_qtdir}/plugins/ktexteditor/cuttlefishplugin.so
 %{_datadir}/metainfo/org.kde.plasma.cuttlefish.appdata.xml
