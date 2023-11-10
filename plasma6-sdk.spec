@@ -46,7 +46,7 @@ BuildRequires:	cmake(Qt6Test)
 BuildRequires:	cmake(Qt6Svg)
 BuildRequires:	plasma6-desktop
 BuildRequires:	plasma6-xdg-desktop-portal-kde
-Requires:	plasma6-cuttlefish
+Requires:	plasma6-iconexplorer
 Requires:	plasma6-engineexplorer
 Requires:	plasma6-plasmoidviewer
 Requires:	plasma6-themeexplorer
@@ -59,18 +59,19 @@ Plasma 6 SDK.
 
 #----------------------------------------------------------------------------
 
-%package -n plasma6-cuttlefish
+%package -n plasma6-iconexplorer
 Summary:	Plasma 6 icon browser
 Group:		Graphical desktop/KDE
+%rename plasma6-cuttlefish
 
-%description -n plasma6-cuttlefish
+%description -n plasma6-iconexplorer
 Plasma 6 icon browser.
 
-%files -n plasma6-cuttlefish -f cuttlefish_editorplugin.lang
-%{_bindir}/cuttlefish
-%{_qtdir}/plugins/ktexteditor/cuttlefishplugin.so
-%{_datadir}/metainfo/org.kde.plasma.cuttlefish.appdata.xml
-%{_datadir}/applications/org.kde.cuttlefish.desktop
+%files -n plasma6-iconexplorer -f iconexplorer.lang -f cuttlefish_editorplugin.lang
+%{_bindir}/iconexplorer
+%{_qtdir}/plugins/ktexteditor/iconexplorerplugin.so
+%{_datadir}/applications/org.kde.iconexplorer.desktop
+%{_datadir}/metainfo/org.kde.plasma.iconexplorer.appdata.xml
 
 #----------------------------------------------------------------------------
 
@@ -182,7 +183,7 @@ Plasma 6 QML viewer
 %install
 %ninja_install -C build
 
-%find_lang cuttlefish || touch cuttlefish.lang
+%find_lang iconexplorer || touch iconexplorer.lang
 %find_lang cuttlefish_editorplugin || touch cuttlefish_editorplugin.lang
 %find_lang plasmaengineexplorer --with-man || touch plasmaengineexplorer.lang
 %find_lang plasmoidviewer --with-man || touch plasmoidviewer.lang
