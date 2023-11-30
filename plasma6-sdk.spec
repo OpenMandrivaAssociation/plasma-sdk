@@ -3,8 +3,8 @@
 
 Summary:	Plasma 6 SDK
 Name:		plasma6-sdk
-Version:	5.27.80
-Release:	%{?git:0.%{git}.}2
+Version:	5.90.0
+Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://www.kde.org/
@@ -27,8 +27,8 @@ BuildRequires:	cmake(KF6ItemModels)
 BuildRequires:	cmake(KF6KIO)
 BuildRequires:	cmake(KF6NewStuff)
 BuildRequires:	cmake(KF6Parts)
-BuildRequires:	cmake(KF6Plasma)
-BuildRequires:	cmake(KF6PlasmaQuick)
+BuildRequires:	cmake(Plasma) >= 5.90.0
+BuildRequires:	cmake(PlasmaQuick) >= 5.90.0
 BuildRequires:	cmake(KF6Service)
 BuildRequires:	cmake(KF6TextEditor)
 BuildRequires:	cmake(KF6WidgetsAddons)
@@ -67,7 +67,7 @@ Group:		Graphical desktop/KDE
 %description -n plasma6-iconexplorer
 Plasma 6 icon browser.
 
-%files -n plasma6-iconexplorer -f iconexplorer.lang -f cuttlefish_editorplugin.lang
+%files -n plasma6-iconexplorer
 %{_bindir}/iconexplorer
 %{_qtdir}/plugins/ktexteditor/iconexplorerplugin.so
 %{_datadir}/applications/org.kde.iconexplorer.desktop
@@ -83,7 +83,7 @@ Conflicts:	plasmate
 %description -n plasma6-engineexplorer
 Plasma 6 engine explorer. It's used to explore plasma data engines.
 
-%files -n plasma6-engineexplorer -f plasmaengineexplorer.lang
+%files -n plasma6-engineexplorer
 %{_bindir}/plasmaengineexplorer
 %{_mandir}/man1/plasmaengineexplorer.1.*
 %{_datadir}/applications/org.kde.plasmaengineexplorer.desktop
@@ -92,15 +92,15 @@ Plasma 6 engine explorer. It's used to explore plasma data engines.
 #----------------------------------------------------------------------------
 
 %package -n plasma6-plasmoidviewer
-Summary:	Plasma 5 plasmoid viewer
+Summary:	Plasma 6 plasmoid viewer
 Group:		Graphical desktop/KDE
 Requires:	plasma6-shell-plasmoidviewer
 Conflicts:	plasmate
 
 %description -n plasma6-plasmoidviewer
-Plasma 5 plasmoid viewer. It's used to run plasmoids in their own window.
+Plasma 6 plasmoid viewer. It's used to run plasmoids in their own window.
 
-%files -n plasma6-plasmoidviewer -f plasmoidviewer.lang
+%files -n plasma6-plasmoidviewer
 %{_bindir}/plasmoidviewer
 %{_mandir}/man1/plasmoidviewer.1.*
 %{_datadir}/applications/org.kde.plasmoidviewer.desktop
@@ -118,10 +118,11 @@ Suggests:	plasma6-plasmoidviewer
 %description -n plasma6-shell-plasmoidviewer
 Plasma 6 plasmoid viewer shell.
 
-%files -n plasma6-shell-plasmoidviewer -f plasma_shell_org.kde.plasmoidviewershell.lang
+%files -n plasma6-shell-plasmoidviewer
 %dir %{_datadir}/plasma/shells/org.kde.plasma.plasmoidviewershell/
 %{_datadir}/plasma/shells/org.kde.plasma.plasmoidviewershell/*
 %{_datadir}/metainfo/org.kde.plasma.plasmoidviewershell.appdata.xml
+
 #----------------------------------------------------------------------------
 
 %package -n plasma6-themeexplorer
@@ -131,7 +132,7 @@ Group:		Graphical desktop/KDE
 %description -n plasma6-themeexplorer
 Plasma 6 theme explorer. It's used to explore and edit plasma themes.
 
-%files -n plasma6-themeexplorer -f org.kde.plasma.themeexplorer.lang
+%files -n plasma6-themeexplorer
 %{_bindir}/plasmathemeexplorer
 %{_datadir}/applications/org.kde.plasma.themeexplorer.desktop
 %dir %{_datadir}/kpackage/genericqml/org.kde.plasma.themeexplorer/
@@ -147,7 +148,7 @@ Group:		Graphical desktop/KDE
 %description -n plasma6-lookandfeelexplorer
 Plasma 6 lookandfeel explorer. It's used to explore and edit plasma themes.
 
-%files -n plasma6-lookandfeelexplorer -f org.kde.plasma.lookandfeelexplorer.lang
+%files -n plasma6-lookandfeelexplorer
 %{_bindir}/lookandfeelexplorer
 %dir %{_datadir}/kpackage/genericqml/org.kde.plasma.lookandfeelexplorer/
 %{_datadir}/metainfo/org.kde.plasma.lookandfeelexplorer.appdata.xml
@@ -183,10 +184,6 @@ Plasma 6 QML viewer
 %install
 %ninja_install -C build
 
-%find_lang iconexplorer || touch iconexplorer.lang
-%find_lang cuttlefish_editorplugin || touch cuttlefish_editorplugin.lang
-%find_lang plasmaengineexplorer --with-man || touch plasmaengineexplorer.lang
-%find_lang plasmoidviewer --with-man || touch plasmoidviewer.lang
-%find_lang plasma_shell_org.kde.plasmoidviewershell || touch plasma_shell_org.kde.plasmoidviewershell.lang
-%find_lang org.kde.plasma.themeexplorer || touch org.kde.plasma.themeexplorer.lang
-%find_lang org.kde.plasma.lookandfeelexplorer || touch org.kde.plasma.lookandfeelexplorer.lang
+# FIXME workaround for rpm 4.19.0 crashing silently on packaging the
+# translations and localized man pages
+rm -rf %{buildroot}%{_mandir}/*/man1 %{buildroot}%{_datadir}/locale
