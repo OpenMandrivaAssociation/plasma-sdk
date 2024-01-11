@@ -3,7 +3,7 @@
 
 Summary:	Plasma 6 SDK
 Name:		plasma6-sdk
-Version:	5.91.0
+Version:	5.92.0
 Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -36,7 +36,7 @@ BuildRequires:	cmake(KF6WindowSystem)
 BuildRequires:	cmake(KF6XmlGui)
 BuildRequires:	cmake(KF6DocTools)
 BuildRequires:	cmake(KF6Kirigami2)
-BuildRequires:	cmake(KF6Plasma5Support)
+BuildRequires:	cmake(Plasma5Support)
 BuildRequires:	cmake(KF6Svg)
 BuildRequires:	qml(org.kde.kirigami)
 BuildRequires:	cmake(Qt6)
