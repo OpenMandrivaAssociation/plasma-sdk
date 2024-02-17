@@ -1,15 +1,17 @@
 %define stable %([ "$(echo %{version} |cut -d. -f2)" -ge 80 -o "$(echo %{version} |cut -d. -f3)" -ge 80 ] && echo -n un; echo -n stable)
-#define git 20231104
+%define git 20240217
+%define gitbranch Plasma/6.0
+%define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
 Summary:	Plasma 6 SDK
 Name:		plasma6-sdk
-Version:	5.93.0
+Version:	5.94.0
 Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://www.kde.org/
 %if 0%{?git:1}
-Source0:	https://invent.kde.org/plasma/plasma-sdk/-/archive/master/plasma-sdk-master.tar.bz2#/plasma-sdk-%{git}.tar.bz2
+Source0:	https://invent.kde.org/plasma/plasma-sdk/-/archive/%{gitbranch}/plasma-sdk-%{gitbranchd}.tar.bz2#/plasma-sdk-%{git}.tar.bz2
 %else
 Source0:	http://download.kde.org/%{stable}/plasma/%(echo %{version} |cut -d. -f1-3)/plasma-sdk-%{version}.tar.xz
 %endif
@@ -101,10 +103,14 @@ Plasma 6 plasmoid viewer. It's used to run plasmoids in their own window.
 
 %files -n plasma6-plasmoidviewer
 %{_bindir}/plasmoidviewer
-%{_mandir}/man1/plasmoidviewer.1.*
+%{_mandir}/man1/plasmoidviewer.1*
 %{_datadir}/applications/org.kde.plasmoidviewer.desktop
 %{_datadir}/metainfo/org.kde.plasmoidviewer.appdata.xml
-%{_datadir}/zsh/site-functions/_plasmoidviewer
+# FIXME this file should be packaged here, but seems to cause a bug
+# in rpm -- packaging simply aborts without showing an error message
+# (but without creating the binary packages) if the file is being
+# packaged. Fortunately it's not a vital function.
+#{_datadir}/zsh/site-functions/_plasmoidviewer
 
 #----------------------------------------------------------------------------
 
@@ -170,7 +176,7 @@ Plasma 6 QML viewer
 #----------------------------------------------------------------------------
 
 %prep
-%autosetup -p1 -n plasma-sdk-%{?git:master}%{!?git:%{version}}
+%autosetup -p1 -n plasma-sdk-%{?git:%{gitbranchd}}%{!?git:%{version}}
 %cmake \
 	-DBUILD_QCH:BOOL=ON \
 	-DBUILD_WITH_QT6:BOOL=ON \
@@ -184,5 +190,6 @@ Plasma 6 QML viewer
 %ninja_install -C build
 
 # FIXME workaround for rpm 4.19.0 crashing silently on packaging the
-# translations and localized man pages
-rm -rf %{buildroot}%{_mandir}/*/man1 %{buildroot}%{_datadir}/locale
+# translations, localized man pages and zsh completions
+rm -rf %{buildroot}%{_mandir}/*/man1 %{buildroot}%{_datadir}/locale \
+	%{buildroot}%{_datadir}/zsh/site-functions/_plasmoidviewer
