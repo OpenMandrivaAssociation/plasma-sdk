@@ -2,8 +2,8 @@
 
 Summary:	Plasma 5 SDK
 Name:		plasma-sdk
-Version:	5.27.10
-Release:	2
+Version:	5.27.11
+Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://www.kde.org/
@@ -156,6 +156,8 @@ rm -f po/*/kdevpackagemanagerview.po
 rm -f po/*/plasmate.po
 rm -f po/*/plasmawallpaperviewer.po
 rm -f po/*/remote-widgets-browser.po
+# Workaround for build failure
+rm -rf po/sv/docs/plasma-sdk_plasmoidviewer po/sv/docs/plasma-sdk_engineexplorer
 
 %cmake_kde5
 
