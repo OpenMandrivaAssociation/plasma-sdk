@@ -6,7 +6,7 @@
 Summary:	Plasma 6 SDK
 Name:		plasma6-sdk
 Version:	6.1.2
-Release:	%{?git:0.%{git}.}1
+Release:	%{?git:0.%{git}.}2
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://www.kde.org/
@@ -15,6 +15,8 @@ Source0:	https://invent.kde.org/plasma/plasma-sdk/-/archive/%{gitbranch}/plasma-
 %else
 Source0:	http://download.kde.org/%{stable}/plasma/%(echo %{version} |cut -d. -f1-3)/plasma-sdk-%{version}.tar.xz
 %endif
+# The desktop file has gone missing in the kpackage .desktop -> .json transition
+Source1:	https://invent.kde.org/plasma/plasma-sdk/-/raw/Plasma/5.27/lookandfeelexplorer/package/metadata.desktop
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KF6Archive)
 BuildRequires:	cmake(KF6Completion)
@@ -158,6 +160,7 @@ Plasma 6 lookandfeel explorer. It's used to explore and edit plasma themes.
 %dir %{_datadir}/kpackage/genericqml/org.kde.plasma.lookandfeelexplorer/
 %{_datadir}/metainfo/org.kde.plasma.lookandfeelexplorer.appdata.xml
 %{_datadir}/kpackage/genericqml/org.kde.plasma.lookandfeelexplorer/*
+%{_datadir}/applications/org.kde.plasma.lookandfeelexplorer.desktop
 
 #----------------------------------------------------------------------------
 
@@ -193,3 +196,6 @@ Plasma 6 QML viewer
 # translations, localized man pages and zsh completions
 rm -rf %{buildroot}%{_mandir}/*/man1 %{buildroot}%{_datadir}/locale \
 	%{buildroot}%{_datadir}/zsh/site-functions/_plasmoidviewer
+
+# Put back missing desktop file for lookandfeelexplorer
+sed -e 's,^Icon=.*,Icon=preferences-desktop-theme-global,' %{S:1} >%{buildroot}%{_datadir}/applications/org.kde.plasma.lookandfeelexplorer.desktop
