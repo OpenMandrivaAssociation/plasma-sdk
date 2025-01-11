@@ -43,6 +43,9 @@ Requires:	plasma-plasmoidviewer
 Requires:	plasma-themeexplorer
 Requires:	plasma-lookandfeelexplorer
 
+%patchlist
+plasma-sdk-5.27.12-compile.patch
+
 %description
 Plasma 5 SDK.
 
@@ -149,16 +152,8 @@ Plasma 5 lookandfeel explorer. It's used to explore and edit plasma themes.
 
 %prep
 %autosetup -p1
-# Must not be plasma_shell_org.kde.desktop, should be checked if fixed
-rm -f po/*/plasma_shell_org.kde.desktop.po
-# Don't ship translations if we don't ship package itself
-rm -f po/*/kdevpackagemanagerview.po
-rm -f po/*/plasmate.po
-rm -f po/*/plasmawallpaperviewer.po
-rm -f po/*/remote-widgets-browser.po
-# Workaround for build failure
-rm -rf po/sv/docs/plasma-sdk_plasmoidviewer po/sv/docs/plasma-sdk_engineexplorer
-
+# Broken, not removing it causes install failure in plasmaengineexplorer.1
+rm -rf po/ca
 %cmake_kde5
 
 %build

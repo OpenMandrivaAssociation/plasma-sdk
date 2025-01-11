@@ -1,0 +1,9 @@
+diff -up plasma-sdk-5.27.12/CMakeLists.txt.omv~ plasma-sdk-5.27.12/CMakeLists.txt
+--- plasma-sdk-5.27.12/CMakeLists.txt.omv~	2025-01-11 17:13:25.717825550 +0100
++++ plasma-sdk-5.27.12/CMakeLists.txt	2025-01-11 17:13:40.152798495 +0100
+@@ -1,4 +1,5 @@
+ cmake_minimum_required(VERSION 3.16)
++cmake_policy(SET CMP0002 OLD)
+ 
+ project(plasma-sdk)
+ set(PROJECT_VERSION "5.27.12")
