@@ -2,7 +2,7 @@
 
 Summary:	Plasma 5 SDK
 Name:		plasma-sdk
-Version:	5.27.12
+Version:	5.27.12.1
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -152,8 +152,6 @@ Plasma 5 lookandfeel explorer. It's used to explore and edit plasma themes.
 
 %prep
 %autosetup -p1
-# Broken, not removing it causes install failure in plasmaengineexplorer.1
-rm -rf po/ca
 %cmake_kde5
 
 %build
