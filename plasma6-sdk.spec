@@ -5,7 +5,7 @@
 
 Summary:	Plasma 6 SDK
 Name:		plasma6-sdk
-Version:	6.2.5
+Version:	6.3.0
 Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -75,6 +75,7 @@ Plasma 6 icon browser.
 %{_qtdir}/plugins/ktexteditor/iconexplorerplugin.so
 %{_datadir}/applications/org.kde.iconexplorer.desktop
 %{_datadir}/metainfo/org.kde.plasma.iconexplorer.appdata.xml
+%{_datadir}/icons/hicolor/scalable/apps/org.kde.iconexplorer.svg
 
 #----------------------------------------------------------------------------
 
