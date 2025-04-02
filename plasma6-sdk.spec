@@ -5,8 +5,8 @@
 
 Summary:	Plasma 6 SDK
 Name:		plasma6-sdk
-Version:	6.3.3
-Release:	%{?git:0.%{git}.}2
+Version:	6.3.4
+Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://www.kde.org/
