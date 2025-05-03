@@ -4,9 +4,9 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
 Summary:	Plasma 6 SDK
-Name:		plasma6-sdk
+Name:		plasma-sdk
 Version:	6.3.4
-Release:	%{?git:0.%{git}.}2
+Release:	%{?git:0.%{git}.}3
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://www.kde.org/
@@ -48,12 +48,18 @@ BuildRequires:	cmake(Qt6Core)
 BuildRequires:	cmake(Qt6Core5Compat)
 BuildRequires:	cmake(Qt6Test)
 BuildRequires:	cmake(Qt6Svg)
-BuildRequires:	plasma6-desktop
-Requires:	plasma6-iconexplorer
-Requires:	plasma6-engineexplorer
-Requires:	plasma6-plasmoidviewer
-Requires:	plasma6-themeexplorer
-Requires:	plasma6-lookandfeelexplorer
+BuildRequires:	plasma-desktop
+Requires:	iconexplorer
+Requires:	engineexplorer
+Requires:	plasmoidviewer
+Requires:	themeexplorer
+Requires:	lookandfeelexplorer
+# Renamed after 6.0 2025-05-03
+%rename plasma6-sdk
+
+BuildSystem:	cmake
+BuildOption:	-DBUILD_QCH:BOOL=ON
+BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 
 %description
 Plasma 6 SDK.
@@ -62,15 +68,17 @@ Plasma 6 SDK.
 
 #----------------------------------------------------------------------------
 
-%package -n plasma6-iconexplorer
+%package -n iconexplorer
 Summary:	Plasma 6 icon browser
 Group:		Graphical desktop/KDE
+# Renamed after 6.0 2025-05-03
 %rename plasma6-cuttlefish
+%rename plasma6-iconexplorer
 
-%description -n plasma6-iconexplorer
+%description -n iconexplorer
 Plasma 6 icon browser.
 
-%files -n plasma6-iconexplorer
+%files -n iconexplorer
 %{_bindir}/iconexplorer
 %{_qtdir}/plugins/ktexteditor/iconexplorerplugin.so
 %{_datadir}/applications/org.kde.iconexplorer.desktop
@@ -79,15 +87,17 @@ Plasma 6 icon browser.
 
 #----------------------------------------------------------------------------
 
-%package -n plasma6-engineexplorer
+%package -n engineexplorer
 Summary:	Plasma 6 engine explorer
 Group:		Graphical desktop/KDE
 Conflicts:	plasmate
+# Renamed after 6.0 2025-05-03
+%rename plasma6-engineexplorer
 
-%description -n plasma6-engineexplorer
+%description -n engineexplorer
 Plasma 6 engine explorer. It's used to explore plasma data engines.
 
-%files -n plasma6-engineexplorer
+%files -n engineexplorer
 %{_bindir}/plasmaengineexplorer
 %{_mandir}/man1/plasmaengineexplorer.1.*
 %{_datadir}/applications/org.kde.plasmaengineexplorer.desktop
@@ -95,16 +105,18 @@ Plasma 6 engine explorer. It's used to explore plasma data engines.
 
 #----------------------------------------------------------------------------
 
-%package -n plasma6-plasmoidviewer
+%package -n plasmoidviewer
 Summary:	Plasma 6 plasmoid viewer
 Group:		Graphical desktop/KDE
-Requires:	plasma6-shell-plasmoidviewer
+Requires:	plasma-shell-plasmoidviewer
 Conflicts:	plasmate
+# Renamed after 6.0 2025-05-03
+%rename plasma6-plasmoidviewer
 
-%description -n plasma6-plasmoidviewer
+%description -n plasmoidviewer
 Plasma 6 plasmoid viewer. It's used to run plasmoids in their own window.
 
-%files -n plasma6-plasmoidviewer
+%files -n plasmoidviewer
 %{_bindir}/plasmoidviewer
 %{_mandir}/man1/plasmoidviewer.1*
 %{_datadir}/applications/org.kde.plasmoidviewer.desktop
@@ -117,30 +129,34 @@ Plasma 6 plasmoid viewer. It's used to run plasmoids in their own window.
 
 #----------------------------------------------------------------------------
 
-%package -n plasma6-shell-plasmoidviewer
+%package -n plasma-shell-plasmoidviewer
 Summary:	Plasma 6 plasmoid viewer shell
 Group:		Graphical desktop/KDE
 # Not sure if it's required
-Suggests:	plasma6-plasmoidviewer
+Suggests:	plasmoidviewer
+# Renamed after 6.0 2025-05-03
+%rename plasma6-shell-plasmoidviewer
 
-%description -n plasma6-shell-plasmoidviewer
+%description -n plasma-shell-plasmoidviewer
 Plasma 6 plasmoid viewer shell.
 
-%files -n plasma6-shell-plasmoidviewer
+%files -n plasma-shell-plasmoidviewer
 %dir %{_datadir}/plasma/shells/org.kde.plasma.plasmoidviewershell/
 %{_datadir}/plasma/shells/org.kde.plasma.plasmoidviewershell/*
 %{_datadir}/metainfo/org.kde.plasma.plasmoidviewershell.appdata.xml
 
 #----------------------------------------------------------------------------
 
-%package -n plasma6-themeexplorer
+%package -n themeexplorer
 Summary:	Plasma 6 theme explorer
 Group:		Graphical desktop/KDE
+# Renamed after 6.0 2025-05-03
+%rename plasma6-themeexplorer
 
-%description -n plasma6-themeexplorer
+%description -n themeexplorer
 Plasma 6 theme explorer. It's used to explore and edit plasma themes.
 
-%files -n plasma6-themeexplorer
+%files -n themeexplorer
 %{_bindir}/plasmathemeexplorer
 %{_datadir}/applications/org.kde.plasma.themeexplorer.desktop
 %dir %{_datadir}/kpackage/genericqml/org.kde.plasma.themeexplorer/
@@ -149,14 +165,16 @@ Plasma 6 theme explorer. It's used to explore and edit plasma themes.
 
 #----------------------------------------------------------------------------
 
-%package -n plasma6-lookandfeelexplorer
+%package -n lookandfeelexplorer
 Summary:	Plasma 6 lookandfeel explorer
 Group:		Graphical desktop/KDE
+# Renamed after 6.0 2025-05-03
+%rename plasma6-lookandfeelexplorer
 
-%description -n plasma6-lookandfeelexplorer
+%description -n lookandfeelexplorer
 Plasma 6 lookandfeel explorer. It's used to explore and edit plasma themes.
 
-%files -n plasma6-lookandfeelexplorer
+%files -n lookandfeelexplorer
 %{_bindir}/lookandfeelexplorer
 %dir %{_datadir}/kpackage/genericqml/org.kde.plasma.lookandfeelexplorer/
 %{_datadir}/metainfo/org.kde.plasma.lookandfeelexplorer.appdata.xml
@@ -165,34 +183,23 @@ Plasma 6 lookandfeel explorer. It's used to explore and edit plasma themes.
 
 #----------------------------------------------------------------------------
 
-%package -n plasma6-kqml
+%package -n kqml
 Summary:	Plasma 6 QML viewer
 Group:		Graphical desktop/KDE
+# Renamed after 6.0 2025-05-03
+%rename plasma6-kqml
 
-%description -n plasma6-kqml
+%description -n kqml
 Plasma 6 QML viewer
 
-%files -n plasma6-kqml
+%files -n kqml
 %{_bindir}/kqml
 %{_mandir}/man1/kqml.1*
 %{_datadir}/zsh/site-functions/_kqml
 
 #----------------------------------------------------------------------------
 
-%prep
-%autosetup -p1 -n plasma-sdk-%{?git:%{gitbranchd}}%{!?git:%{version}}
-%cmake \
-	-DBUILD_QCH:BOOL=ON \
-	-DBUILD_WITH_QT6:BOOL=ON \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-
-%build
-%ninja_build -C build
-
-%install
-%ninja_install -C build
-
+%install -a
 # FIXME workaround for rpm 4.19.0 crashing silently on packaging the
 # translations, localized man pages and zsh completions
 rm -rf %{buildroot}%{_mandir}/*/man1 %{buildroot}%{_datadir}/locale \
