@@ -5,7 +5,7 @@
 
 Summary:	Plasma 6 SDK
 Name:		plasma-sdk
-Version:	6.3.5
+Version:	6.4.0
 Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -80,10 +80,10 @@ Plasma 6 icon browser.
 
 %files -n iconexplorer
 %{_bindir}/iconexplorer
-%{_qtdir}/plugins/ktexteditor/iconexplorerplugin.so
 %{_datadir}/applications/org.kde.iconexplorer.desktop
 %{_datadir}/metainfo/org.kde.plasma.iconexplorer.appdata.xml
 %{_datadir}/icons/hicolor/scalable/apps/org.kde.iconexplorer.svg
+%{_qtdir}/plugins/kf6/ktexteditor/iconexplorerplugin.so
 
 #----------------------------------------------------------------------------
 
@@ -176,9 +176,6 @@ Plasma 6 lookandfeel explorer. It's used to explore and edit plasma themes.
 
 %files -n lookandfeelexplorer
 %{_bindir}/lookandfeelexplorer
-%dir %{_datadir}/kpackage/genericqml/org.kde.plasma.lookandfeelexplorer/
-%{_datadir}/metainfo/org.kde.plasma.lookandfeelexplorer.appdata.xml
-%{_datadir}/kpackage/genericqml/org.kde.plasma.lookandfeelexplorer/*
 %{_datadir}/applications/org.kde.plasma.lookandfeelexplorer.desktop
 
 #----------------------------------------------------------------------------
