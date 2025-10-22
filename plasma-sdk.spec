@@ -5,7 +5,7 @@
 
 Summary:	Plasma 6 SDK
 Name:		plasma-sdk
-Version:	6.4.5
+Version:	6.5.0
 Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -80,8 +80,8 @@ Plasma 6 icon browser.
 
 %files -n iconexplorer
 %{_bindir}/iconexplorer
-%{_datadir}/applications/org.kde.iconexplorer.desktop
 %{_datadir}/metainfo/org.kde.plasma.iconexplorer.appdata.xml
+%{_datadir}/applications/org.kde.iconexplorer.desktop
 %{_datadir}/icons/hicolor/scalable/apps/org.kde.iconexplorer.svg
 %{_qtdir}/plugins/kf6/ktexteditor/iconexplorerplugin.so
 
@@ -143,7 +143,6 @@ Plasma 6 plasmoid viewer shell.
 %files -n plasma-shell-plasmoidviewer
 %dir %{_datadir}/plasma/shells/org.kde.plasma.plasmoidviewershell/
 %{_datadir}/plasma/shells/org.kde.plasma.plasmoidviewershell/*
-%{_datadir}/metainfo/org.kde.plasma.plasmoidviewershell.appdata.xml
 
 #----------------------------------------------------------------------------
 
@@ -161,7 +160,6 @@ Plasma 6 theme explorer. It's used to explore and edit plasma themes.
 %{_datadir}/applications/org.kde.plasma.themeexplorer.desktop
 %dir %{_datadir}/kpackage/genericqml/org.kde.plasma.themeexplorer/
 %{_datadir}/kpackage/genericqml/org.kde.plasma.themeexplorer/*
-%{_datadir}/metainfo/org.kde.plasma.themeexplorer.appdata.xml
 
 #----------------------------------------------------------------------------
 
