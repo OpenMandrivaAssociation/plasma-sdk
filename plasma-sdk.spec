@@ -5,7 +5,7 @@
 
 Summary:	Plasma 6 SDK
 Name:		plasma-sdk
-Version:	6.6.5
+Version:	6.7.2
 Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -158,8 +158,6 @@ Plasma 6 theme explorer. It's used to explore and edit plasma themes.
 %files -n themeexplorer
 %{_bindir}/plasmathemeexplorer
 %{_datadir}/applications/org.kde.plasma.themeexplorer.desktop
-%dir %{_datadir}/kpackage/genericqml/org.kde.plasma.themeexplorer/
-%{_datadir}/kpackage/genericqml/org.kde.plasma.themeexplorer/*
 
 #----------------------------------------------------------------------------
 
