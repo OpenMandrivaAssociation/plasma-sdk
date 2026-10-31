@@ -6,7 +6,7 @@
 Summary:	Plasma 6 SDK
 Name:		plasma-sdk
 Version:	6.8.2
-Release:	%{?git:0.%{git}.}1
+Release:	%{?git:0.%{git}.}2
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://www.kde.org/
@@ -60,6 +60,11 @@ Requires:	lookandfeelexplorer
 BuildSystem:	cmake
 BuildOption:	-DBUILD_QCH:BOOL=ON
 BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+
+# Plasma 6.8 moved panel enums onto org.kde.plasma.shell.Panel.
+# This copy of PanelConfiguration.qml still imported the 6.7 module.
+%patchlist
+plasma-sdk-6.8.2-shell-panel-import.patch
 
 %description
 Plasma 6 SDK.
